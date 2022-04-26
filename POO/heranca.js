@@ -5,19 +5,26 @@
  * Execicio 2 - Implemente 1 funcionalidade especifica nas classes de Pessoa Fisica e Pessoa Juridica, para elas.
  */
 
-class Pessoa {
+/**
+ *  Construtor Pessoa
+ *  Pessoa Juridica
+ *  Pessoa Fisica
+ */
+
+ class Pessoa {
   constructor(nome, sobrenome) {
     this.nome = nome;
     this.sobrenome = sobrenome;
   }
-
-  verificaMaioridade(idade) {
-    if (idade < 18) {
-      console.log('esta pessoa é menor de idade');
-    } else {
-      console.log('esta pessoa pode beber');
-    }
+  
+  mostrarNome() {
+   console.log(this.nome);
   }
+
+  mostrarSobrenome() {
+    console.log(this.sobrenome);
+  }
+
 }
 
 class Pfisica extends Pessoa {
@@ -26,13 +33,23 @@ class Pfisica extends Pessoa {
     this.cpf = cpf;
   }
 
-  tirarCpf() {
-    // ...
+  setCpf(cpf) {
+    this.cpf = cpf;
+  }
+
+  mostrarCpf() {
+    console.log(this.cpf)
   }
 }
 
 let pessoa = new Pfisica('Maria', 'Ribeiro', '11154545471');
-console.log(pessoa.verificaMaioridade(20));
+console.log(pessoa)
+pessoa.mostrarNome()
+pessoa.mostrarSobrenome()
+pessoa.mostrarCpf()
+pessoa.setCpf("000000000")
+console.log(pessoa.cpf)
+
 
 class PJuridica extends Pessoa {
   constructor(nome, sobrenome, cnpj) {
@@ -53,11 +70,17 @@ class PJuridica2 extends Pessoa {
     this.cnpj = cnpj;
   }
 
+  mostrarCnpj(){
+    console.log(this.cnpj)
+  }
+
   getCnpj() {
     return this.cnpj;
   }
 }
 
 empresa = new PJuridica2('Magalu', 'LTDA');
-empresa.setCnpj('121213212/0001-10');
-console.log(empresa.getCnpj());
+empresa.setCnpj('121213212/0001-20');
+console.log(empresa);
+empresa.mostrarNome()
+empresa.mostrarCnpj()

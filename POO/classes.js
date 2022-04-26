@@ -1,6 +1,6 @@
 /**
  *  Construtor Pessoa
- *  Pessoa - Maria
+ *  Pessoa - Maria Ribeiro
  *
  */
 class Pessoa {

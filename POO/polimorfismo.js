@@ -24,7 +24,7 @@ class Conta {
   }
 
   getSaldo() {
-    return this.saldo;
+    return `O saldo da sua conte é: ${this.saldo}`;
   }
 }
 
@@ -42,11 +42,29 @@ class ContaPoupanca extends Conta {
   constructor(numero, titular) {
     super(numero, titular);
   }
+
+  rendimento(taxa){
+    this.saldo = (this.saldo * taxa) + this.saldo 
+  }
+  
+  mostrarRendimentoMensal(taxa) {
+    return `Seu rendimento foi de: ${this.saldo * taxa}`
+  }
+  
 }
 
-let jose = new ContaCorrente(321, 'Jose Jr');
-console.log('OBJETO', jose);
-jose.deposita(200);
-jose.saque(50);
-jose.deposita(100);
-console.log(jose.getSaldo());
+// let jose = new ContaCorrente(321, 'Jose Jr');
+// console.log('OBJETO', jose);
+// jose.deposita(200);
+// jose.saque(50);
+// jose.deposita(100);
+// console.log(jose.getSaldo());
+
+let poupanca = new ContaPoupanca(568, "Bruna Hirano")
+console.log('OBJETO', poupanca);
+poupanca.deposita(1000)
+console.log(poupanca.getSaldo());
+poupanca.rendimento(0.1); //Maravilha seria uma taxa de poupança a 10% haha
+console.log(poupanca.getSaldo());
+console.log(poupanca.mostrarRendimentoMensal(0.1));
+
