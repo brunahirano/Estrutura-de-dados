@@ -31,4 +31,8 @@ const queue = new Queue();
 queue.enqueue('Ana');
 queue.enqueue('Julia');
 queue.enqueue('Pedro');
+console.log(queue)
 console.log(queue.peek());
+queue.dequeue('Ana')
+console.log(queue.peek());
+console.log(queue)

@@ -2,6 +2,28 @@
  * Abrir o site https://pythontutor.com/javascript.html, 
  * coloque a implementação lá e descreva ou resuma o que vc entendeu
  */
+
+/**
+ Resumo: 
+ Existe uma classe node (nó) inicilizada com value e next como null e temos uma lista vinculada inicializada como head= null, this.tail=null e o comprimento de 0
+ 
+ Existem métodos na LinkedList:
+ isEmpty() - para saber se está vazia 
+
+pop() = para retirar nó da lista.
+Se a lista tiver fazia, nó cabeça e nó cauda serão definidos como null e o tamanho= 0. 
+ Se a lista tiver pelo menos um nó, então a lista será reorganizada, removendo o último nó na lista, assim o segundo nó antes do nó cauda agora será o nó cauda.
+
+ push() = para adicionar um valor na lista e reorganizar a estrutura da lista, se a lista tiver vazia o valor a ser inserido vai ser a cabeça e a calda, se a lista tiver pelo menos um nó, primeiro vai ser definido o ponteiro do nó final, no caso será o novo nó e depois podemos definir o nó calda para o novo nó e incrementar no comprimento da lista
+
+ get() - o método retorna conforme o index apontado
+ se o index < 0 || index > this.length || this.isEmpty() resultado vai ser null
+ se o index for === 0, será o nó cabeça
+ se o index for o tamanho da lista -1, será o nó cauda
+
+ */
+
+
 class Node {
   constructor(value) {
     // ao criar um nó, passaremos o valor para o construtor e inicializaremos o ponteiro com
@@ -35,7 +57,7 @@ class LinkedList {
     } else {
       // existem vamos nós na lista
 
-      // inicia o ponteiro na cabeã
+      // inicia o ponteiro na cabecã
       let currentNode = this.head;
       // removemos o ultimo nó da lista
       let nodeToRemove = this.tail;
@@ -78,7 +100,7 @@ class LinkedList {
     this.length++;
   }
 
-  get(value) {
+  get(index) {
     if (index < 0 || index > this.length || this.isEmpty()) {
       return null;
     }
@@ -102,10 +124,15 @@ class LinkedList {
   }
 }
 
+
 const list = new LinkedList();
 
 list.push(5);
 list.push(8);
 list.push(10);
-list.add(1);
-list.get(list);
+list.push(50);
+console.log(list);
+
+list.pop();
+console.log(list);
+console.log(list.get(-1));
